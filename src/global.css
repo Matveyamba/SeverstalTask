@@ -1,0 +1,13 @@
+html, body, #root {
+  height: 100%;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0a0c10;
+}
+
+* {
+  box-sizing: border-box;
+}
