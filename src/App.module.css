@@ -1,0 +1,144 @@
+:root {
+  --bg0: #0a0c10;
+  --bg1: rgba(255, 255, 255, 0.08);
+  --bg2: rgba(255, 255, 255, 0.06);
+  --stroke: rgba(255, 255, 255, 0.14);
+  --stroke2: rgba(255, 255, 255, 0.22);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.68);
+
+  --shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+  --shadowSoft: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  --r12: 14px;
+  --r16: 18px;
+  --r20: 22px;
+
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass2: rgba(255, 255, 255, 0.09);
+
+  --focus: rgba(160, 220, 255, 0.70);
+  --ok: rgba(120, 255, 200, 0.40);
+  --warn: rgba(255, 210, 120, 0.45);
+  --danger: rgba(255, 120, 120, 0.55);
+
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.page {
+  color: var(--text);
+  min-height: 100vh;
+  padding: 18px;
+  box-sizing: border-box;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+
+  background:
+    radial-gradient(1200px 700px at 15% 10%, rgba(120, 180, 255, 0.18), transparent 55%),
+    radial-gradient(900px 600px at 85% 20%, rgba(200, 120, 255, 0.14), transparent 55%),
+    radial-gradient(900px 600px at 65% 85%, rgba(120, 255, 200, 0.10), transparent 55%),
+    linear-gradient(180deg, #07090d 0%, #0a0c10 40%, #0a0c10 100%);
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+  font-weight: 760;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.headerRight {
+  display: flex;
+  gap: 8px;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 12px;
+  height: calc(100vh - 92px);
+  min-height: 520px;
+}
+
+.left, .right {
+  min-width: 0;
+  height: 100%;
+}
+
+.mobileTabs {
+  display: none;
+  gap: 8px;
+  max-width: 1200px;
+  margin: 0 auto 10px;
+}
+
+.tab {
+  appearance: none;
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  padding: 9px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 720;
+  transition: transform 160ms var(--ease), background 160ms var(--ease), border-color 160ms var(--ease);
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--stroke2);
+}
+
+.tab:active {
+  transform: scale(0.98);
+}
+
+.tab:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.tabActive {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.mobileHidden {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: auto;
+  }
+  .mobileTabs {
+    display: flex;
+  }
+  .mobileHidden {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab {
+    transition: none;
+  }
+}

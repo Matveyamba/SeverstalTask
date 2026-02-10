@@ -1,0 +1,113 @@
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.40);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  overflow: hidden;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.updatedAt {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 8px;
+}
+
+.textarea {
+  flex: 1;
+  resize: none;
+  outline: none;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background:
+    radial-gradient(900px 300px at 20% 0%, rgba(255,255,255,0.08), transparent 55%),
+    rgba(0, 0, 0, 0.18);
+
+  color: rgba(255, 255, 255, 0.94);
+  padding: 12px 12px;
+  font-size: 14px;
+  line-height: 1.45;
+
+  transition: border-color 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.textarea:focus {
+  border-color: rgba(160, 220, 255, 0.55);
+  box-shadow: 0 0 0 3px rgba(160, 220, 255, 0.22);
+}
+
+.error {
+  margin-top: 10px;
+  color: rgba(255, 140, 140, 0.95);
+  font-size: 12px;
+}
+
+.titleInput {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background:
+    radial-gradient(900px 220px at 20% 0%, rgba(255,255,255,0.10), transparent 55%),
+    rgba(0, 0, 0, 0.18);
+
+  color: rgba(255, 255, 255, 0.94);
+  padding: 12px 12px;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.15px;
+  outline: none;
+
+  transition: border-color 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.titleInput:focus {
+  border-color: rgba(160, 220, 255, 0.55);
+  box-shadow: 0 0 0 3px rgba(160, 220, 255, 0.18);
+}

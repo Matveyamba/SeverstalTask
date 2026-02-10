@@ -1,0 +1,42 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  z-index: 999;
+}
+
+.dialog {
+  width: min(520px, 100%);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.55);
+  padding: 14px 14px 12px;
+  color: rgba(255,255,255,0.92);
+  outline: none;
+}
+
+.title {
+  font-weight: 900;
+  letter-spacing: 0.15px;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.desc {
+  color: rgba(255,255,255,0.72);
+  font-size: 13px;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
