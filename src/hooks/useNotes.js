@@ -163,25 +163,25 @@ export function useNotes() {
   }
 
   useEffect(() => {
-    function onKeyDown(e) {
-      const isMac = navigator.platform.toLowerCase().includes("mac");
-      const mod = isMac ? e.metaKey : e.ctrlKey;
-      if (!mod) return;
+  function onKeyDown(e) {
+    const isMac = navigator.platform.toLowerCase().includes("mac");
+    const mod = isMac ? e.metaKey : e.ctrlKey;
 
-      const key = e.key.toLowerCase();
-      if (key === "n") {
-        e.preventDefault();
-        requestCreate();
-      }
-      if (key === "s") {
-        e.preventDefault();
-        saveNow();
-      }
+    if (mod && e.altKey && e.key.toLowerCase() === "n") {
+      e.preventDefault();
+      requestCreate();
     }
 
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [dirty, draft, notes, selectedId, confirm]);
+    if (mod && e.altKey && e.key.toLowerCase() === "s") {
+      e.preventDefault();
+      saveNow();
+    }
+  }
+
+  window.addEventListener("keydown", onKeyDown);
+  return () => window.removeEventListener("keydown", onKeyDown);
+}, [dirty, draft, notes, selectedId, confirm]);
+
 
   return {
     notes,

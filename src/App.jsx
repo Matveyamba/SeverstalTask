@@ -36,7 +36,9 @@ export default function App() {
       <header className={styles.header}>
         <div>
           <h1 className={styles.title}>Заметки</h1>
-          <p className={styles.subtitle}>Ctrl/Cmd+N — новая, Ctrl/Cmd+S — сохранить</p>
+          <p className={styles.subtitle}>
+            Ctrl/Cmd+Alt+N — новая, Ctrl/Cmd+Alt+S — сохранить
+          </p>
         </div>
         {headerRight}
       </header>
